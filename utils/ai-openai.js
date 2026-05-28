@@ -10,6 +10,11 @@ export async function getDreamInterpretation(dreamText) {
     throw new Error('Server misconfigured: OPENAI_API_KEY is missing');
   }
 
+  // test
+  console.log('ai model:', process.env.OPENAI_MODEL)
+  console.log('ai url:', process.env.OPENAI_URL)
+  console.log('ai key:', process.env.OPENAI_API_KEY)
+
   const model = process.env.OPENAI_MODEL || 'gpt-4o-mini';
 
   try {
