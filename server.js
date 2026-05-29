@@ -62,10 +62,10 @@ let server;
 initDatabase().then(() => {
   server = app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-    process.exit(1)
   });
 }).catch(error => {
   console.error('Failed to initialize database:', error);
+  process.exit(1)
 });
 
 process.on('SIGTERM', gracefulShutdown)
